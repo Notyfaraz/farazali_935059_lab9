@@ -1,0 +1,72 @@
+#question no 1
+
+class shape:
+    def __init__(self,sides):
+        self.sides = sides
+
+    def area1(self):
+        pass
+
+class triangle(shape):
+    def __init__(self,width,height):
+        super().__init__(3)
+        self.width = width
+        self.height = height
+
+    def tri_area(self):
+        return 0.5 * self.width * self.height
+
+class circle(shape):
+    def __init__(self,radius):
+        super().__init__(0)
+        self.radius = radius
+
+    def cir_area(self):
+        return 3.142 * self.radius**2
+
+def main():
+    obj1 = triangle(3,4)
+    obj2 = circle(2)
+
+    print("area of triangle is: ",obj1.tri_area(),"cm")
+    print("area of circle is: ", obj2.cir_area(),"cm")
+
+main()
+
+#question no 2 
+print("\n")
+
+class employee:
+    def __init__(self,name,id,salary):
+        self.name = name
+        self.id = id
+        self.salary = salary
+
+
+    def display(self):
+        print("namw", self.name)
+        print("id", self.id)
+        print("salary", self.salary)
+        print("-------------------------------------------")
+
+class b_manager(employee):
+    def __init__(self,name,id,salary):
+        super().__init__(name,id,salary)
+
+class p_manager(employee):
+    def __init__(self,name,id,salary):
+        super().__init__(name,id,salary)
+
+class l_manager(employee):
+    def __init__(self,name,id,salary):
+        super().__init__(name,id,salary)
+
+def main():
+    lst = []
+    lst.append(b_manager("faraz",123,10000))
+    lst.append(p_manager("nofel",456,12000))
+    lst.append(l_manager("omer",789,15000))
+    for i in lst:
+        i.display()
+main()
+
